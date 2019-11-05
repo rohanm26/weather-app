@@ -1,48 +1,36 @@
 import React from "react";
-import "../styles/Weather.css";
+import { Temperature } from './Temperature';
+import "../styles/style.css";
+
 
 export const Weather = props => {
   return (
-    <div className="Weather">
-      <h1>Weather App</h1>
-      {props.cities.map(city => {
-        return (
-          <button
-            className="btn mx-5 btn-primary"
-            key={city}
-            onClick={props.handleChange(city)}
-          >
-            {city}
-          </button>
-        );
-      })}
-      {props.data.length !== 0 ? (
-        <div>
-          <p>
-            Description: <b>{props.data.weather[0].description}</b>
-            <br />
-            Temperature in <b>{props.temp}</b> :{" "}
-            <b>
-              {props.temp === false
-                ? Math.round(props.data.main.temp)
-                : Math.round(((props.data.main.temp - 32) * 5) / 9)}
-            </b>
-            <br />
-            Wind speed: <b>{props.data.wind.speed}</b>
-            <br />
-          </p>
-          <button
-            className="btn btn-info"
-            name="Fahrenheit"
-            value={!!!props.temp}
-            onClick={props.handleSubmit}
-          >
-            {props.temp ? "Celcius" : "Fahrenheit"}
-          </button>
-        </div>
-      ) : (
-        <p>No data to show</p>
-      )}
+    <div className="col-18 text-center">
+      {
+        props.data.length !== 0 ? (
+          <div>
+            <>
+              <h2>{props.data.name}</h2>
+              <h2>{props.data.weather[0].description}</h2>
+              <br />
+              <figure>
+                {
+                  (props.data.weather[0].description).includes("snow") ? <img src="./images/snowy-6.svg" /> : (props.data.weather[0].description).includes("rain") ? <img src="./images/rainy-6.svg"/> : (props.data.weather[0].description).includes("sun") ? <img src="./images/day.svg" /> : <img src="./images/cloudy.svg" />
+                }
+                <figcaption>
+                  <h2>{props.data.wind.speed}m/s</h2>
+                  <Temperature
+                    data={props.data}
+                    temp={props.temp}
+                    handleChange={props.handleChange} />
+                </figcaption>
+              </figure>
+              <br />
+            </>
+          </div>
+        ) : (
+            <h3>Please select city</h3>
+          )}
     </div>
   );
 };

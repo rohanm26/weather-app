@@ -1,0 +1,49 @@
+.Temperature {
+  font-family: varela;
+}
+
+h2 {
+  font-family: varela;
+}
+
+.Cities button {
+  display: block;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.Cities {
+  display: flex;
+  justify-content: center;
+}
+
+.App h1{
+  font-family: verdana;
+  font-size: 70px;
+  display: block;
+  margin: 1rem;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+button {
+    color: Black;
+    background-color: Aqua;
+    font-weight: 500;
+    padding: 0.5rem 0.5rem;
+    border-radius: 1rem;
+}
+
+button:disabled {
+  cursor: not-allowed
+}
+
+button:hover {
+  background-color: Lime;
+/*   
+  RGB(195, 68, 122); */
+}
