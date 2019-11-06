@@ -14,7 +14,7 @@ export class App extends Component {
   handleChange = (e) => {
     this.setState({
       temp: !this.state.temp
-    }); setTimeout(() => { console.log(this.state.tempUnit) }, 0)
+    });
   }
 
   handleSubmit = (city) => (e) => {
@@ -23,7 +23,6 @@ export class App extends Component {
       .then(res => this.setState({
         weatherData: res.data
       }))
-    console.log(this.state.weatherData)
   }
 
   render() {

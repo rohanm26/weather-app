@@ -15,7 +15,7 @@ export const Weather = props => {
               <br />
               <figure>
                 {
-                  (props.data.weather[0].description).includes("snow") ? <img src="./images/snowy-6.svg" /> : (props.data.weather[0].description).includes("rain") ? <img src="./images/rainy-6.svg"/> : (props.data.weather[0].description).includes("sun") ? <img src="./images/day.svg" /> : <img src="./images/cloudy.svg" />
+                  (props.data.weather[0].description).includes("snow") ? <img src="./images/snowy-6.svg" alt="snow"/> : (props.data.weather[0].description).includes("rain") ? <img src="./images/rainy-6.svg" alt="rainy"/> : (props.data.weather[0].description).includes("sun") ? <img src="./images/day.svg" alt="sunny"/> : <img src="./images/cloudy.svg" alt="cloudy"/>
                 }
                 <figcaption>
                   <h2>{props.data.wind.speed}m/s</h2>
